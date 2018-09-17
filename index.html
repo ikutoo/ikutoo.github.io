@@ -9,6 +9,8 @@
           content="Song Xiaofeng's Home Page.">
     <meta name="Author" content="Song Xiaofeng">
     <link href="./css/style.css" rel="stylesheet" type="text/css">
+    <link href="./css/live2d.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./js/live2d.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -37,7 +39,7 @@
         <i style="color:#66FFFF;">3. One English tech blog every two weeks for a year.</i><br>
         All of these shaders, games and blogs can be found in the links below.<br><br><br><br>
 
-        <div class=" table">
+        <div class="table">
             <div class="tableRow">
                 <div class="tableCell"><a class="menu" href="http://www.shadertoy.com/user/ikuto">shaders</a></div>
                 <div class="tableCell">This is the website where I placed my shaders.</div>
@@ -54,22 +56,35 @@
                     allowfullscreen=""></iframe>
         </div>
 
-        <div class=" table">
+        <div class="table">
             <div class="tableRow">
                 <div class="tableCell"><a class="menu" href="http://songxiaofeng.top/game/">games</a></div>
                 <div class="tableCell">This is the website where I placed my games.</div>
             </div>
         </div>
 
-        <div class=" table">
+        <div class="table">
             <div class="tableRow">
                 <div class="tableCell"><a class="menu" href="http://songxiaofeng.top/blog/">blogs</a></div>
                 <div class="tableCell">This is the website where I placed my blogs.</div>
             </div>
         </div>
+        <div style="text-align: center;">
+            <iframe width="640" height="360" frameborder="0"
+                    src="https://songxiaofeng.top/blog/"
+                    allowfullscreen=""></iframe>
+        </div>
+
+        <div id=landlord>
+            <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        </div>
+        <script type="text/javascript">
+            loadlive2d("live2d", "http://songxiaofeng.top/model/tia/model.json");
+        </script>
 
         <br><br><br><br><br>
     </div>
+
     <div id="footer"><a class="regular" href="http://songxiaofeng.top/">Song Xiaofeng</a> 2018</div>
 
 </div>
