@@ -81,8 +81,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/sakura.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="118" column="50" lean-forward="true" selection-start-line="118" selection-start-column="50" selection-end-line="118" selection-end-column="50" />
+            <state relative-caret-position="391">
+              <caret line="119" column="47" lean-forward="true" selection-start-line="119" selection-start-column="47" selection-end-line="119" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -214,12 +214,12 @@
       <workItem from="1537196400060" duration="859000" />
       <workItem from="1537198720612" duration="4990000" />
       <workItem from="1537513740318" duration="2240000" />
-      <workItem from="1538227980355" duration="7652000" />
+      <workItem from="1538227980355" duration="7734000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28675000" />
+    <option name="totallyTimeSpent" value="28757000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -288,8 +288,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/sakura.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="118" column="50" lean-forward="true" selection-start-line="118" selection-start-column="50" selection-end-line="118" selection-end-column="50" />
+        <state relative-caret-position="391">
+          <caret line="119" column="47" lean-forward="true" selection-start-line="119" selection-start-column="47" selection-end-line="119" selection-end-column="47" />
         </state>
       </provider>
     </entry>
