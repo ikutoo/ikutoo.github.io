@@ -123,7 +123,7 @@ body,
   height: 100%;
 }
 body {
-  background: #eee;
+  background: #222;
   font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-text-size-adjust: 100%;
 }
@@ -174,7 +174,7 @@ body {
   -ms-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
   z-index: 1;
-  background: #eee;
+  background: #222;
 }
 .mobile-nav-on #wrap {
   left: 280px;
@@ -194,19 +194,19 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #999;
+  color: #fff;
   margin-bottom: 1em;
   margin-left: 5px;
   line-height: 1em;
-  text-shadow: 0 1px #fff;
+  text-shadow: 0 0px #fff;
   font-weight: bold;
 }
 .article-inner,
 .archive-article-inner {
-  background: #fff;
+  background: #444;
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
-  border: 1px solid #ddd;
+  border: 1px solid #666;
   border-radius: 3px;
 }
 .article-entry h1,
@@ -232,11 +232,11 @@ body {
 .article-entry h6,
 .widget h6 {
   font-size: 1em;
-  color: #999;
+  color: #fff;
 }
 .article-entry hr,
 .widget hr {
-  border: 1px dashed #ddd;
+  border: 1px dashed #666;
 }
 .article-entry strong,
 .widget strong {
@@ -310,7 +310,7 @@ body {
 #header {
   height: 300px;
   position: relative;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #666;
 }
 #header:before,
 #header:after {
@@ -372,7 +372,7 @@ body {
 #logo {
   font-size: 40px;
   line-height: 40px;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
 }
 #subtitle {
   font-size: 16px;
@@ -390,7 +390,8 @@ body {
 .main-nav-link {
   float: left;
   color: #fff;
-  opacity: 0.6;
+  opacity: 0.8;
+  font-size: 25px;
   text-decoration: none;
   text-shadow: 0 1px rgba(0,0,0,0.2);
   -webkit-transition: opacity 0.2s;
@@ -407,9 +408,9 @@ body {
 .nav-icon {
   font-family: FontAwesome;
   text-align: center;
-  font-size: 14px;
-  width: 14px;
-  height: 14px;
+  font-size: 25px;
+  width: 25px;
+  height: 25px;
   padding: 20px 15px;
   position: relative;
   cursor: pointer;
@@ -420,7 +421,7 @@ body {
 }
 @media screen and (max-width: 479px) {
   .main-nav-link {
-    display: none;
+    display: nones;
   }
 }
 #main-nav-toggle {
@@ -480,7 +481,7 @@ body {
 .search-form-input {
   border: none;
   background: none;
-  color: #555;
+  color: #fff;
   width: 100%;
   font: 13px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   outline: none;
@@ -541,7 +542,7 @@ body {
   text-decoration: none;
   font-size: 2em;
   font-weight: bold;
-  color: #555;
+  color: #fff;
   line-height: 1.1em;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
@@ -549,10 +550,10 @@ body {
   transition: color 0.2s;
 }
 a.article-title:hover {
-  color: #258fb8;
+  color: #0ff;
 }
 .article-entry {
-  color: #555;
+  color: #fff;
   padding: 0 20px;
 }
 .article-entry:before,
@@ -586,7 +587,7 @@ a.article-title:hover {
   margin: 1.1em 0;
 }
 .article-entry a {
-  color: #258fb8;
+  color: #0ff;
   text-decoration: none;
 }
 .article-entry a:hover {
@@ -615,11 +616,11 @@ a.article-title:hover {
 }
 .article-entry th {
   font-weight: bold;
-  border-bottom: 3px solid #ddd;
+  border-bottom: 3px solid #666;
   padding-bottom: 0.5em;
 }
 .article-entry td {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #666;
   padding: 10px 0;
 }
 .article-entry blockquote {
@@ -651,7 +652,7 @@ a.article-title:hover {
   margin-left: 1em;
 }
 .article-entry .caption {
-  color: #999;
+  color: #fff;
   display: block;
   font-size: 0.9em;
   margin-top: 0.5em;
@@ -679,21 +680,21 @@ a.article-title:hover {
   line-height: 1em;
   padding: 6px 15px;
   border-radius: 15px;
-  background: #eee;
-  color: #999;
+  background: #222;
+  color: #fff;
   text-shadow: 0 1px #fff;
   text-decoration: none;
 }
 .article-more-link a:hover {
-  background: #258fb8;
+  background: #0ff;
   color: #fff;
   text-decoration: none;
-  text-shadow: 0 1px #1e7293;
+  text-shadow: 0 1px #0cc;
 }
 .article-footer {
   font-size: 0.85em;
   line-height: 1.6em;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #666;
   padding-top: 1.6em;
   margin: 0 20px 20px;
 }
@@ -706,11 +707,11 @@ a.article-title:hover {
   clear: both;
 }
 .article-footer a {
-  color: #999;
+  color: #fff;
   text-decoration: none;
 }
 .article-footer a:hover {
-  color: #555;
+  color: #fff;
 }
 .article-tag-list-item {
   float: left;
@@ -762,15 +763,15 @@ a.article-title:hover {
     margin-left: -4px;
     content: "";
     border-radius: 50%;
-    background: #ddd;
-    -webkit-box-shadow: 0 1px 2px #fff;
-    box-shadow: 0 1px 2px #fff;
+    background: #666;
+    -webkit-box-shadow: 0 0px 4px #fff;
+    box-shadow: 0 0px 4px #fff;
   }
 }
 .article-nav-link-wrap {
   text-decoration: none;
   text-shadow: 0 1px #fff;
-  color: #999;
+  color: #fff;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -779,7 +780,7 @@ a.article-title:hover {
   display: block;
 }
 .article-nav-link-wrap:hover {
-  color: #555;
+  color: #fff;
 }
 @media screen and (min-width: 768px) {
   .article-nav-link-wrap {
@@ -804,7 +805,7 @@ a.article-title:hover {
 .article-nav-caption {
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #ddd;
+  color: #666;
   line-height: 1em;
   font-weight: bold;
 }
@@ -819,7 +820,7 @@ a.article-title:hover {
 .article-share-box {
   position: absolute;
   display: none;
-  background: #fff;
+  background: #222;
   -webkit-box-shadow: 1px 2px 10px rgba(0,0,0,0.2);
   box-shadow: 1px 2px 10px rgba(0,0,0,0.2);
   border-radius: 3px;
@@ -838,15 +839,15 @@ a.article-title:hover {
   box-sizing: border-box;
   font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   padding: 0 15px;
-  color: #555;
+  color: #fff;
   outline: none;
-  border: 1px solid #ddd;
+  border: 1px solid #666;
   border-radius: 3px 3px 0 0;
   height: 36px;
   line-height: 36px;
 }
 .article-share-links {
-  background: #eee;
+  background: #222;
 }
 .article-share-links:before,
 .article-share-links:after {
@@ -865,7 +866,7 @@ a.article-title:hover {
   display: block;
   float: left;
   position: relative;
-  color: #999;
+  color: #fff;
   text-shadow: 0 1px #fff;
 }
 .article-share-twitter:before,
@@ -946,12 +947,12 @@ a.article-title:hover {
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
   padding: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #666;
   border-radius: 3px;
   margin: 50px 0;
 }
 #comments a {
-  color: #258fb8;
+  color: #0ff;
 }
 .archives-wrap {
   margin: 50px 0;
@@ -999,7 +1000,7 @@ a.article-title:hover {
 .archive-article-title {
   text-decoration: none;
   font-weight: bold;
-  color: #555;
+  color: #fff;
   -webkit-transition: color 0.2s;
   -moz-transition: color 0.2s;
   -ms-transition: color 0.2s;
@@ -1007,13 +1008,13 @@ a.article-title:hover {
   line-height: 1.6em;
 }
 .archive-article-title:hover {
-  color: #258fb8;
+  color: #0ff;
 }
 .archive-article-footer {
   margin-top: 1em;
 }
 .archive-article-date {
-  color: #999;
+  color: #fff;
   text-decoration: none;
   font-size: 0.85em;
   line-height: 1em;
@@ -1025,10 +1026,10 @@ a.article-title:hover {
   background: #fff;
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
-  border: 1px solid #ddd;
+  border: 1px solid #666;
   border-radius: 3px;
   text-align: center;
-  color: #999;
+  color: #fff;
   overflow: hidden;
 }
 #page-nav:before,
@@ -1046,11 +1047,11 @@ a.article-title:hover {
   height: 2ex;
 }
 #page-nav a {
-  color: #999;
+  color: #fff;
   text-decoration: none;
 }
 #page-nav a:hover {
-  background: #999;
+  background: #fff;
   color: #fff;
 }
 #page-nav .prev {
@@ -1068,20 +1069,20 @@ a.article-title:hover {
   }
 }
 #page-nav .current {
-  color: #555;
+  color: #fff;
   font-weight: bold;
 }
 #page-nav .space {
-  color: #ddd;
+  color: #666;
 }
 #footer {
-  background: #262a30;
+  background: #222;
   padding: 50px 0;
-  border-top: 1px solid #ddd;
-  color: #999;
+  border-top: 1px solid #666;
+  color: #fff;
 }
 #footer a {
-  color: #258fb8;
+  color: #0ff;
   text-decoration: none;
 }
 #footer a:hover {
@@ -1097,7 +1098,7 @@ a.article-title:hover {
   margin: 0 -20px;
   padding: 15px 20px;
   border-style: solid;
-  border-color: #ddd;
+  border-color: #666;
   border-width: 1px 0;
   overflow: auto;
   color: #ccc;
@@ -1113,8 +1114,8 @@ a.article-title:hover {
   font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
 }
 .article-entry code {
-  background: #eee;
-  text-shadow: 0 1px #fff;
+  background: #888;
+  text-shadow: 0 0px #fff;
   padding: 0 0.3em;
 }
 .article-entry pre code {
@@ -1165,7 +1166,7 @@ a.article-title:hover {
 .article-entry .gist {
   margin: 0 -20px;
   border-style: solid;
-  border-color: #ddd;
+  border-color: #666;
   border-width: 1px 0;
   background: #2d2d2d;
   padding: 15px 20px 15px 0;
@@ -1202,7 +1203,7 @@ a.article-title:hover {
   margin-left: 20px;
 }
 .article-entry .gist .gist-file .gist-meta a {
-  color: #258fb8;
+  color: #0ff;
   font-weight: normal;
 }
 .article-entry .gist .gist-file .gist-meta a:hover {
@@ -1278,7 +1279,7 @@ pre .javascript .function {
 @media screen and (max-width: 479px) {
   .mobile-nav-link {
     display: block;
-    color: #999;
+    color: #fff;
     text-decoration: none;
     padding: 15px 20px;
     font-weight: bold;
@@ -1300,16 +1301,16 @@ pre .javascript .function {
 }
 .widget {
   color: #777;
-  text-shadow: 0 1px #fff;
-  background: #ddd;
-  -webkit-box-shadow: 0 -1px 4px #ccc inset;
-  box-shadow: 0 -1px 4px #ccc inset;
-  border: 1px solid #ccc;
+  text-shadow: 0 0px #fff;
+  background: #222;
+  -webkit-box-shadow: 0 0px 4px #888 inset;
+  box-shadow: 0 0px 4px #888 inset;
+  border: 1px solid #000;
   padding: 15px;
   border-radius: 3px;
 }
 .widget a {
-  color: #258fb8;
+  color: #0ff;
   text-decoration: none;
 }
 .widget a:hover {
@@ -1355,7 +1356,7 @@ pre .javascript .function {
 .tag-list-count,
 .archive-list-count {
   padding-left: 5px;
-  color: #999;
+  color: #fff;
   font-size: 0.85em;
 }
 .category-list-count:before,
