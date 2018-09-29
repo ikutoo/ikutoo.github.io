@@ -34,19 +34,8 @@ body
     padding-right:0;
     margin-left:0;
     margin-right:0;
-    background-image: linear-gradient(bottom,         #202020 0%, #000000 50%, #000000 100%);
-    background-image: -o-linear-gradient(bottom,      #202020 0%, #000000 50%, #000000 100%);
-    background-image: -moz-linear-gradient(bottom,    #202020 0%, #000000 50%, #000000 100%);
-    background-image: -webkit-linear-gradient(bottom, #202020 0%, #000000 50%, #000000 100%);
-    background-image: -ms-linear-gradient(bottom,     #202020 0%, #000000 50%, #000000 100%);
-    background-image: -webkit-gradient(
-  	    linear,
-      	left bottom,
-      	left top,
-      	color-stop(1.0, #000000),
-  	    color-stop(0.5, #000000),
-      	color-stop(0.0, #202020) );
-		
+    background-image: url("/images/yuyuko.jpg");
+
     overflow:hidden;
     position:absolute;
 }
@@ -79,7 +68,7 @@ div#content
 
 div#footer
 {
-	background-color:#404040;
+	background-color:#222;
     color:#ffffff;
     font-size:1em;
 	padding:4px;
@@ -90,7 +79,7 @@ div#footer
 
 a.headerTitle1
 {
-    background-color:#404040;
+    background-color:#666;
     color:#ffffff;
     font-size:1.5em;
     text-align: center;
