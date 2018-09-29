@@ -13,7 +13,6 @@
 
 body
 {
-    background-color: #222222;
     color: #ffffff;
     font-style:normal;
     font-size:16px;
@@ -22,8 +21,9 @@ body
     text-align: left;
     text-justify:inter-word;
 
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: #222222 url("/css/images/yuyuko.jpg") no-repeat fixed;
+    background-size:100% 100%;
+
     top:0px;
     left:0px;
     width:100%;
@@ -34,8 +34,6 @@ body
     padding-right:0;
     margin-left:0;
     margin-right:0;
-    background-image: url("/css/images/yuyuko.jpg");
-    background-size:100% 100%;
 
     overflow:hidden;
     position:absolute;
