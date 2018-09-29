@@ -22,7 +22,7 @@ body
     text-justify:inter-word;
 
     background: url("/css/images/yuyuko.jpg") no-repeat fixed;
-    background-size:100% 100%;
+    background-size:auto 100%;
 
     top:0px;
     left:0px;
