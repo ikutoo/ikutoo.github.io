@@ -200,10 +200,6 @@ a.regular:link
     color: #0ff;
     text-decoration: none;
 }
-a.regular:visited
-{
-    color: #fff
-}
 a.regular:hover
 {
   color : #0cf;
