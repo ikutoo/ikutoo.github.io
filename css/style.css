@@ -70,8 +70,8 @@ div#content
     left:0px;
     padding-top:4%;
     padding-bottom:0%;
-    padding-left:2%;
-    padding-right:2%;
+    padding-left:4%;
+    padding-right:4%;
 }
 
 div#footer
@@ -220,7 +220,7 @@ a.menu
 
 a.menu:hover
 {
-  color : #ffffff;
+  color : #0cf;
 }
 
 .myTwoColumns
