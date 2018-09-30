@@ -197,16 +197,16 @@ a.headerTitle2:hover
 
 a.regular:link
 {
-    color: #ffd080;
+    color: #0ff;
     text-decoration: none;
 }
 a.regular:visited
 {
-    color: #ffa060
+    color: #fff
 }
 a.regular:hover
 {
-  color : #ffa060;
+  color : #fff;
 }
 
 a.menu
