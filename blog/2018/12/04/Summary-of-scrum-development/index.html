@@ -5,16 +5,18 @@
   
 
   
-  <title>Perlin Noise | Song Xiaofeng&#39;s Blog</title>
+  <title>Summary of Scrum Development | Song Xiaofeng&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="article">
-<meta property="og:title" content="Perlin Noise">
-<meta property="og:url" content="http://songxiaofeng.top/blog/2018/10/18/Perlin-Noise/index.html">
+<meta property="og:title" content="Summary of Scrum Development">
+<meta property="og:url" content="http://songxiaofeng.top/blog/2018/12/04/Summary-of-scrum-development/index.html">
 <meta property="og:site_name" content="Song Xiaofeng&#39;s Blog">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-26T05:21:08.572Z">
+<meta property="og:image" content="https://songxiaofeng.top/blog/images/scrum.png">
+<meta property="og:updated_time" content="2018-12-04T06:43:05.962Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Perlin Noise">
+<meta name="twitter:title" content="Summary of Scrum Development">
+<meta name="twitter:image" content="https://songxiaofeng.top/blog/images/scrum.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -59,10 +61,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Perlin-Noise" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Summary-of-scrum-development" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2018/10/18/Perlin-Noise/" class="article-date">
-  <time datetime="2018-10-18T11:43:52.000Z" itemprop="datePublished">2018-10-18</time>
+    <a href="/blog/2018/12/04/Summary-of-scrum-development/" class="article-date">
+  <time datetime="2018-12-04T05:17:23.000Z" itemprop="datePublished">2018-12-04</time>
 </a>
     
   </div>
@@ -73,7 +75,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Perlin Noise
+      Summary of Scrum Development
     </h1>
   
 
@@ -81,11 +83,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><img src="https://songxiaofeng.top/blog/images/scrum.png" alt=""></p>
+<a id="more"></a>
+<h3 id="软件开发的问题"><a href="#软件开发的问题" class="headerlink" title="软件开发的问题"></a>软件开发的问题</h3><pre><code>* 理想情况下，一个好的软件应该100%满足开闭原则。
+* 现实情况下，没有一个软件能够100%满足开闭原则。
+</code></pre><h3 id="问题的原因"><a href="#问题的原因" class="headerlink" title="问题的原因"></a>问题的原因</h3><pre><code>* 客户的需求往往变化很剧烈，而且可能会有很多预料之外的需求。
+* 不可能设计出一个软件，使得软件面临任何需要变化都能满足开闭原则。
+</code></pre><h3 id="解决手段"><a href="#解决手段" class="headerlink" title="解决手段"></a>解决手段</h3><pre><code>* 猜测最有可能发生变化的需求，通过抽象来隔离变化，使得软件面临类似需求时满足开闭原则（抽象是实现开闭原则的关键）。
+* 在开发过程中，通过不断的重构改善原有设计。例如用户提出了一个新的需求，我们发现面临这个需求时软件不满足开闭原则，此时要对软件进行重构。
+* 重构目标： 软件再次面临类似需求变化时能够满足开闭原则。
+</code></pre><h3 id="Scrum开发思想"><a href="#Scrum开发思想" class="headerlink" title="Scrum开发思想"></a>Scrum开发思想</h3><ul>
+<li>上述的解决手段是Scrum开发的基本思想之一。<pre><code>* Scrum开发强调：
+    * 简单的解决方案就是最好的解决方案。
+    * 过犹不及：拒绝不成熟的抽象。
+* 总之，不要刚开始就想着把软件架构设计完美，这几乎是不可能的，要优先以实现用户的功能需求为主，然后通过不停的重构来改善原有的架构设计。
+</code></pre></li>
+</ul>
+<h3 id="Scrum开发优化"><a href="#Scrum开发优化" class="headerlink" title="Scrum开发优化"></a>Scrum开发优化</h3><ul>
+<li>Scrum要与<a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank" rel="noopener">TDD (Test-driven development)</a>相结合。<pre><code>* TDD可以帮助我们完善软件架构设计
+    * 在写测试用例的过程中可以帮助我们发现软件原有的设计缺陷。
+    * 如果单元测试用例写不出来，说明软件模块之间耦合度太高，这时需要重构软件实现解耦合。
+* 由于TDD能够帮助完善软件架构设计，也使得软件之后可能面临的重构会更加容易。
+</code></pre></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://songxiaofeng.top/blog/2018/10/18/Perlin-Noise/" data-id="cjp9al1d70000wgrbhoayro56" class="article-share-link">Share</a>
+      <a data-url="http://songxiaofeng.top/blog/2018/12/04/Summary-of-scrum-development/" data-id="cjp9al1dh0004wgrb3tr1uau4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -94,19 +119,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2018/10/18/Ray-Marching/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Ray Marching
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/2018/10/01/live2D/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2018/11/26/World-of-Fractal/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Live2D</div>
+      <div class="article-nav-title">World of Fractal</div>
     </a>
   
 </nav>
