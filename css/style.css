@@ -21,7 +21,7 @@ body
     text-align: left;
     text-justify:inter-word;
 
-    background: url("/css/images/yuyuko.jpg") no-repeat fixed center;
+    background: url("./images/yuyuko.jpg") no-repeat fixed center;
     background-size:cover;
 
     top:0px;
@@ -45,15 +45,14 @@ div#mask
     left:0px;
     width:100%;
     height:100%;
-    background: #222e;
+    background: #222222dd;
 }
 
 div#container
 {
-    width: 100%;
+    width: 61.8%;
     height:100%;
-    max-width:1560px;
-    top:0px;
+    top:20px;
     padding:0;
     margin-left:auto;
     margin-right:auto;
@@ -72,81 +71,6 @@ div#content
     padding-bottom:0%;
     padding-left:4%;
     padding-right:4%;
-}
-
-div#footer
-{
-	background-color:#222;
-    color:#ffffff;
-    font-size:1em;
-	padding:4px;
-    text-align: right;
-    position: relative;
-	clear:both;
-}
-
-a.headerTitle1
-{
-    background-color:#666;
-    color:#ffffff;
-    font-size:1.5em;
-    text-align: center;
-    width: 100%;
-	padding:0px;
-	margin:0px;
-	display: block;
-	margin: auto auto;
-    position: relative;
-    text-decoration: none;
-}
-
-a.headerTitle1:hover
-{
-    background-color:#808080;
-}
-
-a.headerTitle2
-{
-    background-color:#606060;
-    color:#ffffff;
-    font-size:1.5em;
-    text-align: center;
-    vertical-align: middle;
-	display: block;
-    width: 100%;
-    position: relative;
-    text-decoration: none;
-}
-
-a.headerTitle2:hover
-{
-    background-color:#808080;
-}
-
-.headerTitle3
-{
-    background-color:#808080;
-    color:#ffffff;
-    font-size:1.5em;
-    text-align: center;
-    vertical-align: middle;
-	display: block;
-    width: 100%;
-    position: relative;
-    text-decoration: none;
-}
-
-.headerTitle4
-{
-    background-color:#a0a0a0;
-    color:#ffffff;
-    font-size:1.5em;
-    text-align: center;
-    vertical-align: middle;
-	display: block;
-    width: 100%;
-    position: relative;
-    text-decoration: none;
 }
 
 .columns
@@ -171,35 +95,32 @@ a.headerTitle2:hover
 	mix-blend-mode:screen;
 }
 
-.codigo
+a.title
 {
-	font-family: Courier, sans-serif;
-	font-size: 1em;
-	color: #40c040;
-    text-align:center;
-    vertical-align:text-top;
-	white-space:pre;
+    font-size: 1.6em;
+    font-weight:bold;
+    font-style:italic;
+    color: #ddd6ff;
+    background-color: rgba(249, 239, 255, 0.33);
+    text-decoration: none;
+    padding-right:80%;
 }
 
-.codigoComment
+a.title2
 {
-	font-family: Courier, sans-serif;
-	font-size: 1em;
-	color: #d0d050;
-	white-space:pre;
-}
-
-
-.codigoInText
-{
-	color: #40c040;
-}
-
-a.regular:link
-{
+    font-size: 1.2em;
+    font-weight:bold;
+    font-style:italic;
     color: #0ff;
     text-decoration: none;
 }
+
+a.regular
+{
+    color: #0ff;
+    text-decoration: none
+}
+
 a.regular:hover
 {
   color : #0cf;
@@ -248,17 +169,17 @@ a.menu:hover
 
 .table
 {
-    display:table;	
+    display:table;
 }
 
 .tableRow
 {
-    display:table-row;	
+    display:table-row;
 }
 
 .tableCell
 {
-    display:table-cell;	
+    display:table-cell;
 	padding:12px;
     padding-right:24px;
 }
