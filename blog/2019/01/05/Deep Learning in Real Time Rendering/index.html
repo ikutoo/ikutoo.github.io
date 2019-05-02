@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Deep Learning in Real-Time Rendering | Song Xiaofeng&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="深度学习在实时渲染中的应用与挑战计算机科学与技术 专业学生 宋晓峰## 摘要&amp;emsp;&amp;emsp;深度学习是机器学习和人工智能研究的最新、最流行的趋势之一，正在渗透到各个学科领域之中。深度学习解决了很多传统方法难以解决的问题并取得了较好的效果。&amp;emsp;&amp;emsp;近年来图形学领域的研究者们也开始将深度学习等机器学习方法应用到三维图形渲染的优化与改善上，用以更好地解决“走样”这一困扰了图形学研">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Deep Learning in Real-Time Rendering">
+<meta property="og:url" content="http://songxiaofeng.top/blog/2019/01/05/Deep Learning in Real Time Rendering/index.html">
+<meta property="og:site_name" content="Song Xiaofeng&#39;s Blog">
+<meta property="og:description" content="深度学习在实时渲染中的应用与挑战计算机科学与技术 专业学生 宋晓峰## 摘要&amp;emsp;&amp;emsp;深度学习是机器学习和人工智能研究的最新、最流行的趋势之一，正在渗透到各个学科领域之中。深度学习解决了很多传统方法难以解决的问题并取得了较好的效果。&amp;emsp;&amp;emsp;近年来图形学领域的研究者们也开始将深度学习等机器学习方法应用到三维图形渲染的优化与改善上，用以更好地解决“走样”这一困扰了图形学研">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://songxiaofeng.top/blog/2019/01/05/Deep%20Learning%20in%20Real%20Time%20Rendering/images/2-1.jpg">
+<meta property="og:image" content="http://songxiaofeng.top/blog/2019/01/05/Deep%20Learning%20in%20Real%20Time%20Rendering/images/2-2.png">
+<meta property="og:image" content="http://songxiaofeng.top/blog/2019/01/05/Deep%20Learning%20in%20Real%20Time%20Rendering/images/2-3.jpg">
+<meta property="og:image" content="http://songxiaofeng.top/blog/2019/01/05/Deep%20Learning%20in%20Real%20Time%20Rendering/images/2-4.png">
+<meta property="og:image" content="http://songxiaofeng.top/blog/2019/01/05/Deep%20Learning%20in%20Real%20Time%20Rendering/images/2-5.png">
+<meta property="og:image" content="http://songxiaofeng.top/blog/2019/01/05/Deep%20Learning%20in%20Real%20Time%20Rendering/images/2-5-2.png">
+<meta property="og:image" content="http://songxiaofeng.top/blog/2019/01/05/Deep%20Learning%20in%20Real%20Time%20Rendering/images/2-6.png">
+<meta property="og:image" content="http://songxiaofeng.top/blog/2019/01/05/Deep%20Learning%20in%20Real%20Time%20Rendering/images/2-7-1.jpg">
+<meta property="og:image" content="http://songxiaofeng.top/blog/2019/01/05/Deep%20Learning%20in%20Real%20Time%20Rendering/images/2-7-2.gif">
+<meta property="og:image" content="http://songxiaofeng.top/blog/2019/01/05/Deep%20Learning%20in%20Real%20Time%20Rendering/images/2-7-3.gif">
+<meta property="og:updated_time" content="2019-01-05T12:15:44.101Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Deep Learning in Real-Time Rendering">
+<meta name="twitter:description" content="深度学习在实时渲染中的应用与挑战计算机科学与技术 专业学生 宋晓峰## 摘要&amp;emsp;&amp;emsp;深度学习是机器学习和人工智能研究的最新、最流行的趋势之一，正在渗透到各个学科领域之中。深度学习解决了很多传统方法难以解决的问题并取得了较好的效果。&amp;emsp;&amp;emsp;近年来图形学领域的研究者们也开始将深度学习等机器学习方法应用到三维图形渲染的优化与改善上，用以更好地解决“走样”这一困扰了图形学研">
+<meta name="twitter:image" content="http://songxiaofeng.top/blog/2019/01/05/Deep%20Learning%20in%20Real%20Time%20Rendering/images/2-1.jpg">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Song Xiaofeng&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" href="https://songxiaofeng.top">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://songxiaofeng.top/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Deep Learning in Real Time Rendering" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/01/05/Deep Learning in Real Time Rendering/" class="article-date">
+  <time datetime="2019-01-05T12:15:00.000Z" itemprop="datePublished">2019-01-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Deep Learning in Real-Time Rendering
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <center><font size="6">深度学习在实时渲染中的应用与挑战</font></center><br><br><br><center><font size="4">计算机科学与技术 专业</font></center><br><br><br><center><font size="4">学生 宋晓峰</font></center><br><br><br><br><br>## 摘要<br>&emsp;&emsp;深度学习是机器学习和人工智能研究的最新、最流行的趋势之一，正在渗透到各个学科领域之中。深度学习解决了很多传统方法难以解决的问题并取得了较好的效果。<br><br>&emsp;&emsp;近年来图形学领域的研究者们也开始将深度学习等机器学习方法应用到三维图形渲染的优化与改善上，用以更好地解决“走样”这一困扰了图形学研究者们数十年的噩梦级难题。除了应用于反走样之外，深度学习等机器学习方法在实时渲染领域也有一些其它的应用。<br><br>&emsp;&emsp;本文主要综述了深度学习在图形学的实时渲染领域中的一些最新研究与应用，包括面部动画、反走样、光线追踪算法优化、2D-to-3D风格转换等，简要分析了这些研究与应用如何使用深度学习、增强学习等方法来解决图形学实时渲染领域的问题。 最后分析了深度学习在实时渲染的应用中面临的主要挑战。<br><br><br><br><br>## 关键词<br>&emsp;&emsp;深度学习； 实时渲染； 面部动画； 反走样； 风格转换； 实时光线追踪<br><br><br><br><br><br># 一. 背景知识简介<br><br>## 1.1 深度学习<br>&emsp;&emsp;深度学习(Deep Learning)是机器学习中一种基于对数据进行表征学习的算法。观测值（例如一幅图像）可以使用多种方式来表示，如每个像素强度值的向量，或者更抽象地表示成一系列边、特定形状的区域等。而使用某些特定的表示方法更容易从实例中学习任务（例如，人脸识别或面部表情识别）。深度学习的好处是用非监督式或半监督式的特征学习和分层特征提取高效算法来替代手工获取特征<sup>[1]</sup>。<br><br>## 1.2 实时渲染<br>&emsp;&emsp;实时渲染(Real-Time Rendering)是图形学研究领域中一个非常重要的分支。与离线渲染不同，实时渲染的挑战主要在实时性上，游戏中对效率的要求通常是60 fps左右，即每秒需要完成60次对整个游戏场景的绘制，因此实时渲染研究的热点问题就是如何在保证效率的前提下，尽可能的使得渲染画面接近真实的、或者预期的结果。真实性这一问题在离线渲染中已经几乎完美解决，完全可以达到以假乱真的渲染效果，然而在实时渲染中真实性仍然远远做不到完美。<br><br>## 1.3 实时光线追踪<br>&emsp;&emsp;光线追踪原本是离线渲染中的宠儿，被广泛地应用在影视渲染、游戏特效制作等离线渲染领域，能够渲染出无限接近真实的画面。然而随着近年来GPU计算能力的飞跃提升，以及2018年NVIDIA图灵架构GPU的问世，实时的光线追踪已经成为可能，虽然受限于计算能力，仍然无法与影视级的离线渲染画面相比，但也是实时渲染领域一次重大的飞跃，实时渲染的画面质量也将得到巨大提升。<br><br># 二. 深度学习在实时渲染中的应用<br><br>## 2.1 角色面部动画制作<br><br>### 2.1.1 主要问题<br>&emsp;&emsp;游戏角色面部动画的制作在AAA级游戏中需求量越来越大，如何高效灵活的进行面部动画的制作这一技术面临严峻的挑战。图2-1中左图是演员的真实图片，右图是为该演员建立的三维网格模型，面部动画的制作就是要根据演员的真实面部表情来驱动数字三维模型，从而能够应用在游戏角色上。<br><br><center><img src="images/2-1.jpg" width="80%"></center><br><center><font size="2">图2-1 面部建模与动画</font></center>
+
+<p>&emsp;&emsp;游戏工作室通过录制演员的视频来创建面部动画，演员需要为游戏中的每个角色的每一行对话进行一次录制。 工作者们使用软件将视频转换为演员的数字视频，最后处理为游戏角色的面部动画。现有的软件要求艺术家花费数百小时修改这些数字面孔从而与真实演员的面孔一致。</p>
+<p>&emsp;&emsp;然而这种传统方式存在很多问题：</p>
+<ul>
+<li>对于艺术家而言是一项繁琐的工作</li>
+<li>对于工作室而言是一项代价昂贵的工作</li>
+<li>面部动画一旦完成就很难进行更改</li>
+</ul>
+<p>&emsp;&emsp;如果能够减少创建面部动画的工作量，游戏艺术家们便能够为游戏添加更多的角色对话和更多的游戏角色，并且使得艺术家们能够更加灵活快速地进行脚本的更改。</p>
+<h3 id="2-1-2-音频驱动的面部动画制作"><a href="#2-1-2-音频驱动的面部动画制作" class="headerlink" title="2.1.2 音频驱动的面部动画制作"></a>2.1.2 音频驱动的面部动画制作</h3><p>&emsp;&emsp;现在已经有很多研究能够通过深度学习的方法，直接使用演员的视频来驱动数字面孔，生成游戏角色的面部动画，这使得上述的几个问题在一定程度成得到改善，但是仍然有所不足。</p>
+<p>&emsp;&emsp;NVIDIA的研究者们在SIGGRAPH 2017会议上发表了他们最新的研究成果-“Audio-Driven Facial Animation by Joint End-to-End Learning of Pose and Emotion”<sup>[2]</sup>，这片文章提出了一种机器学习的技术，仅从音频就能够实时的、低延迟的驱动3D面部动画。</p>
+<center><img src="images/2-2.png" width="90%"></center><br><center><font size="2">图2-2 Audio-Driven Facial Animation by Joint End-to-End Learning of Pose and Emotion</font></center>
+
+<p>&emsp;&emsp;如图2-2所示，这篇文章使用深度神经网络学习从输入音频到输出面部模型3D顶点坐标之间的映射。他们使用3-5分钟的传统方式捕获的面部动画视频作为训练数据来对深度神经网络进行训练。尽管他们主要的目标是对同一个演员的讲话风格进行模拟，但是他们的模型同样适用于其它不同性别、口音和语言的演员。</p>
+<p>&emsp;&emsp;这篇文章提出的技术适用于AAA级游戏角色对话、虚拟现实角色、网络对话等多种场景，使得艺术家能够从繁琐冗余的工作之中解脱，从而把更多精力投入到其它更有价值的事情上。</p>
+<h2 id="2-2-降噪-反走样"><a href="#2-2-降噪-反走样" class="headerlink" title="2.2 降噪/反走样"></a>2.2 降噪/反走样</h2><h3 id="2-2-1-走样产生的原因"><a href="#2-2-1-走样产生的原因" class="headerlink" title="2.2.1 走样产生的原因"></a>2.2.1 走样产生的原因</h3><p>&emsp;&emsp;走样现象一直以来是实时图形渲染领域的噩梦，走样现象产生的本质原因是尝试使用不充分的离散采样数据来表示一个连续的过程。例如光栅化过程中会把连续的图形转换为离散的像素点表示，这样在图形的边缘就会出现锯齿。在对2维纹理进行采样时也存在类似的问题，导致纹理走样的现象。在离线渲染中走样问题可能不是太大的问题，因为有足够的时间进行足够的采样与计算，而在实时渲染中由于效率问题，只能进行低频的采样，所以走样问题尤为严重。</p>
+<p>&emsp;&emsp;在计算机图形学中，反走样方法有很多类：一种方法是增加采样频率，例如超级采样抗锯齿(Super Sampling Antialiasing, SSAA),多重采样抗锯齿(MutiSampling Antialiasing, MSAA); 另一种方法是基于屏幕空间的区域采样平滑处理; 此外还有时间反走样(Temporal Antialiasing, TAA)等方法。但是这些方法的反走样效果还是不如人意，存在很多问题与局限性。</p>
+<p>&emsp;&emsp;由于走样问题难以用传统方法解决，最近越来越多的研究者们开始研究结合深度学习等机器学习方法来更好的解决走样问题。</p>
+<h3 id="2-2-2-NVIDIA-DLSS"><a href="#2-2-2-NVIDIA-DLSS" class="headerlink" title="2.2.2 NVIDIA DLSS"></a>2.2.2 NVIDIA DLSS</h3><p>&emsp;&emsp;随着NVIDIA图灵架构GPU的问世，实时的光线追踪技术已经逐渐成为现实，尽管光线追踪不使用传统的光栅化渲染方式，但是仍然存在走样问题，基于蒙特卡洛方法的光线追踪方法需要大量的采样光线，通常在每一个像素点发射数百条甚至上千条采样光线才能达到一个理想的结果。</p>
+<p>&emsp;&emsp;然而以现在RTX GPU的计算能力，能够模拟的光线数目仍然十分有限，Nvidia CEO老黄在siggraph发布会上一直反复强调， 10 Giga rays，说是Quadro RTX 8000每秒能够处理 100亿条光线，如果是4K分辨率，每秒按60帧来算， 平均下来每一帧也就只能向屏幕上单个像素像素投射不到20条左右的光线，而且游戏除了画面渲染以外还有很多其它的计算，所以是以上能够计算的光线数量会更少。而真实世界中光线的数量是无限的，所以在计算量有限，能够模拟的光线数目有限的情况下，渲染出来的画面精度较低，不可避免的会出现向图2-3左下角这样的噪点，而右上角画面效果使我们想要的。</p>
+<center><img src="images/2-3.jpg" width="90%"></center><br><center><font size="2">图2-3 Nvidia DLSS</font></center>
+
+<p>&emsp;&emsp;为了解决这个问题，nvidia提出了DLSS，深度学习超采样这样一个概念，用于去燥、抗锯齿、提升画面的质量，我们知道深度学习是很神奇的，nvidia利用深度学习，利用低分辨率的画面去生成高分辨率的画面，比如4k分辨率下每个像素只能有20条光线的话，那么2k分辨率下就会有80条光线，这时画面质量较高，然后在使用深度学习，将2k分辨率的画面，转换为4k，而仍然能够保持一个很好的效果。</p>
+<h3 id="2-2-3-其它研究"><a href="#2-2-3-其它研究" class="headerlink" title="2.2.3 其它研究"></a>2.2.3 其它研究</h3><p>&emsp;&emsp;除了NVIDIA的DLSS之外，也有很多研究者发表了一些使用深度学习反走样与降噪的一些文章，例如TOG 2017的一篇文章-“Interactive Reconstruction of Monte Carlo Image Sequences using a Recurrent Denoising Autoencoder”<sup>[3]</sup>，这篇文章提出了一种循环降噪自编码器用于对基于蒙特卡洛光线追踪算法渲染图像进行重建(图2-4)，以达到去噪的目的。这篇文章的主要目的就是使用极少的采样预算来完成对全局光照的重构，这篇文章的研究成果与NVIDIA的DLSS相比有更好的效果， 不过效率还不足以达到实时（只达到可以交互的程度），但仍然具有重要的应用价值，并且未来短时间内可能达到实时。</p>
+<center><img src="images/2-4.png" width="90%"></center><br><center><font size="2">图2-4 Architecture of Recurrent Autoencoder</font></center>
+
+<h2 id="2-3-光线追踪"><a href="#2-3-光线追踪" class="headerlink" title="2.3 光线追踪"></a>2.3 光线追踪</h2><p>&emsp;&emsp; 前面提到使用深度学习的方法来对光线追踪的渲染结果进行降噪，从而能够使用更少的采样光线就可以得到可以接受的结果。除了使用深度学习进行降噪之外，还可以使用机器学习的方法对光线追踪的方法本身进行改善。</p>
+<p>&emsp;&emsp; 基于蒙特卡洛方法的光线追踪需要在每个像素点投射数百条采样光线，从而生成照片般真实的渲染效果，然而并不是所有的光路都对最终的渲染结果有贡献，这样就会导致很多无用的计算。</p>
+<p>&emsp;&emsp; 为了解决上述问题，研究者Ken Daum和Alex Keller在SIGGRAPH 2017发表了一篇文章-“Learning Light Transport the Reinforced Way”<sup>[4]</sup>，在这篇文章中，他们使用增强学习的方法来使得机器学会区分哪些光路对最终结果的影响大，哪些光路对最终结果影响小。</p>
+<p>&emsp;&emsp; 进一步来说，这篇文章使用增强学习判断光线从何而来，学习得到的信息可以用于重要性采样，从而可以把那些对最终结果没有贡献的光路排除掉，使得在同等的采样数量（即同等的计算代价）下能够得到更好的渲染结果。</p>
+<center><img src="images/2-5.png" width="45%"><img src="images/2-5-2.png" width="45%"></center><br><center><font size="2">图2-5 对比结果</font></center>
+
+<p>&emsp;&emsp; 例如图2-5中左图是在每个像素点使用128条采样光线得到的一个渲染结果，可以看到有严重的噪点与走样现象，右图是使用这篇文章提出的方法，在同等的采样光线数目下得到的结果，相比左图明显要好上很多。</p>
+<h2 id="2-4-2D-to-3D风格转换"><a href="#2-4-2D-to-3D风格转换" class="headerlink" title="2.4 2D-to-3D风格转换"></a>2.4 2D-to-3D风格转换</h2><p>&emsp;&emsp;风格转换(Style tranfer)也是现在AI一个比较好的应用，使用机器学习创造艺术，听上去是一件很美好的事情。图2-6是一个典型的风格转换的例子，左图片是源图片，通常是一张真实拍摄的图片；左图右下角的小图片是参考图片，我们希望将源图片转换为与参考图片相似的风格；右图则是通过深度学习等机器学习的方法对源图片进行风格转换之后得到的结果。</p>
+<center><img src="images/2-6.png" width="80%"></center><br><center><font size="2">图2-6 2D Style Transfer</font></center>
+
+<p>&emsp;&emsp;不仅是针对图片，现在也有很多研究成果能做到对一整个视频风格的实时转换。但是这都只是针对2D的情况，实现2D到3D的风格转换也是可能的。</p>
+<center><img src="images/2-7-1.jpg" width="30%"><img src="images/2-7-2.gif" width="30%"><img src="images/2-7-3.gif" width="30%"></center><br><center><font size="2">图2-7 2D-to-3D Style Transfer</font></center>
+
+<p>&emsp;&emsp;Hiroharu Kato与Yoshitaka Ushiku等研究者在CVPR 2018发表了一篇文章-“Neural 3D Mesh Renderer”<sup>[5]</sup>，这篇文章提出了一种Nerual网格渲染器，能够实现从2D到3D的风格转换。图2-7中左图是参考图片，中间图是原始的3D模型，右图是进行2D到3D风格转换之后的结果，可以看出2D的图片风格应用到了3D模型的纹理上，并且应用到了3D模型顶点的变换上，使得整个模型的风格与参考图相似。而且作者在文章中提到他们的2D-to-3D的风格转换是实时进行的，即这一研究结果可以被应用到实时渲染中。</p>
+<p>&emsp;&emsp;不过就这篇文章给出的渲染结果而言，2D-to-3D的风格转换效果仍然有很多诡异的地方，要达到实用的程度还需要很多研究者们的努力贡献。</p>
+<h1 id="三-深度学习在实时渲染中面临的挑战"><a href="#三-深度学习在实时渲染中面临的挑战" class="headerlink" title="三. 深度学习在实时渲染中面临的挑战"></a>三. 深度学习在实时渲染中面临的挑战</h1><h2 id="3-1-问题与挑战"><a href="#3-1-问题与挑战" class="headerlink" title="3.1 问题与挑战"></a>3.1 问题与挑战</h2><h3 id="3-1-1-实时性"><a href="#3-1-1-实时性" class="headerlink" title="3.1.1 实时性"></a>3.1.1 实时性</h3><p>&emsp;&emsp;效率的实时性是深度学习在实时渲染中面临的最严峻的挑战，深度学习的训练阶段是离线进行的，但预测阶段需要实时进行，而游戏中的实时渲染通常要求每秒60帧的帧率，即16ms内需要完成图形渲染、物理计算、事件处理、深度神经网络预测等所有工作，能够留给预测的时间可能只有几毫秒的时间，如何保证效率的实时性是需要解决的首要问题。</p>
+<h3 id="3-1-2-时间稳定性"><a href="#3-1-2-时间稳定性" class="headerlink" title="3.1.2 时间稳定性"></a>3.1.2 时间稳定性</h3><p>&emsp;&emsp;实时渲染要求具有稳定性，即在不断地时间段渲染结果应该是稳定的，使用深度学习应用于实时渲染是否能够保证时间上的稳定性，这也是重要问题与挑战之一。</p>
+<h3 id="3-1-3-难以调试"><a href="#3-1-3-难以调试" class="headerlink" title="3.1.3 难以调试"></a>3.1.3 难以调试</h3><p>&emsp;&emsp;图形渲染时运行时进行的，很多错误结果可能只有在运行时才会产生，这会导致难以对深度学习的结果进行调试，使得开发代价增加，为此需要设计更好的调试机制。</p>
+<h2 id="3-2-总结"><a href="#3-2-总结" class="headerlink" title="3.2 总结"></a>3.2 总结</h2><p>&emsp;&emsp;深度学习是一种新的强大而且发展迅速的技术，尽管存在上述的一些问题，但是深度学习总体上来说适用于应用到实时渲染研究中。</p>
+<ul>
+<li>和其它一些领域不同，在实时渲染领域很容易生成训练数据。</li>
+<li>当遇到一个不知道如何解决的图形学问题时，可以考虑使用深度学习。</li>
+<li>深度学习也可以用来对现有的解决方法进行改进。</li>
+</ul>
+<p><br><br><br></p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p>[1] Deep Learning. <a href="https://en.wikipedia.org/wiki/Deep_learning" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Deep_learning</a>.</p>
+<p>[2] Tero Karras, Timo Aila, Samuli Laine. Audio-Driven Facial Animation by Joint End-to-End Learning of Pose and Emotion. Siggraph, 2017.</p>
+<p>[3] Chakravarty R. Alla Chaitanya, Anton Kaplanyan, Christoph Schied. Interactive Reconstruction of Monte Carlo<br>Image Sequences using a Recurrent Denoising Autoencoder. TOG, 2017.</p>
+<p>[4] Ken Dahm, Alex Keller. Learning Light Transport the Reinforced Way. Siggraph, 2017.</p>
+<p>[5] Hiroharu Kato, Yoshitaka Ushiku. Neural 3D Mesh Renderer. CVPR, 2018.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://songxiaofeng.top/blog/2019/01/05/Deep Learning in Real Time Rendering/" data-id="cjqjfjk0c0000icrb28zfimzq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2018/12/04/Summary-of-scrum-development/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Summary of Scrum Development</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/01/">January 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">September 2018</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/01/05/Deep Learning in Real Time Rendering/">Deep Learning in Real-Time Rendering</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/12/04/Summary-of-scrum-development/">Summary of Scrum Development</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/10/01/live2D/">Live2D</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/10/01/Shadertoy/">Toying with shaders on Shadertoy</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/09/16/Resource-for-Computer-Graphics/">Resource for Computer Graphics</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 <a href="http://songxiaofeng.top/" target="_blank">Song Xiaofeng</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="https://songxiaofeng.top" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
