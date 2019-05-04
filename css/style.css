@@ -45,7 +45,8 @@ div#mask
     left:0px;
     width:100%;
     height:100%;
-    background: #222222dd;
+    background-color: #222222;
+    opacity: 0.9;
 }
 
 div#container
@@ -62,7 +63,7 @@ div#container
 
 div#content
 {
-    background-color:#4446;
+    background-color:#333;
     line-height:150%;
     position:relative;
     top:0px;
@@ -71,28 +72,6 @@ div#content
     padding-bottom:0%;
     padding-left:4%;
     padding-right:4%;
-}
-
-.columns
-{
-    font-size:1em;
-    font-style:normal;
-    font-weight:normal;
-    text-align: left;
-    text-justify:inter-word;
-}
-
-.imgFooter
-{
-    font-size:1em;
-    font-style:italic;
-    font-weight:normal;
-    text-align: left;
-}
-
-.formula
-{
-	mix-blend-mode:screen;
 }
 
 a.title
@@ -132,39 +111,11 @@ a.menu
     font-style:italic;
     font-weight:bold;
     color: #0ff;
-    text-decoration: none
 }
 
 a.menu:hover
 {
   color : #0cf;
-}
-
-.myTwoColumns
-{
-  width: 100%;
-  padding: 0px;
-  -moz-column-width: 640px;
-  -moz-column-count: 2;
-  -moz-column-gap: 58px;
-  -webkit-column-width: 640px;
-  -webkit-column-count: 2;
-  -webkit-column-gap: 58px;
-  column-width: 640px;
-  column-count: 2;
-  column-gap: 58px;
-}
-
-.myNoSplit
-{
-    -moz-column-break-inside: avoid;
-    -webkit-column-break-inside: avoid;
-    column-break-inside: avoid;
-}
-
-.myFigure
-{
-  margin: 0px;
 }
 
 .table
@@ -182,9 +133,4 @@ a.menu:hover
     display:table-cell;
 	padding:12px;
     padding-right:24px;
-}
-
-li
-{
-    padding-bottom: 12px;
 }
