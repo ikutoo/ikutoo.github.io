@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Perlin Noise Implementation | Song Xiaofeng&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Perlin Noise Implementation">
+<meta property="og:url" content="http://songxiaofeng.top/blog/2019/09/07/perlin-noise-implementation/index.html">
+<meta property="og:site_name" content="Song Xiaofeng&#39;s Blog">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-09-07T08:39:52.126Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Perlin Noise Implementation">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Song Xiaofeng&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" href="https://songxiaofeng.top">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://songxiaofeng.top/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-perlin-noise-implementation" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2019/09/07/perlin-noise-implementation/" class="article-date">
+  <time datetime="2019-09-07T08:23:27.000Z" itemprop="datePublished">2019-09-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Perlin Noise Implementation
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div style="text-align: center;"><br>    <iframe width="800" height="450" frameborder="0" src="https://www.shadertoy.com/embed/lt3BWM?gui=true&t=10&paused=true&muted=false" allowfullscreen></iframe><br></div>
+
+
+<a id="more"></a>
+<p><br><br></p>
+<h2 id="Common-Micro"><a href="#Common-Micro" class="headerlink" title="Common Micro"></a>Common Micro</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define fade(t) (t*t*(3.0-2.0*t))</span><br></pre></td></tr></table></figure>
+<h2 id="1D-Perlin-Noise"><a href="#1D-Perlin-Noise" class="headerlink" title="1D Perlin Noise"></a>1D Perlin Noise</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">float hash(float p)</span><br><span class="line">&#123;</span><br><span class="line">    p = fract(p * .1031);</span><br><span class="line">    p *= p + 33.33;</span><br><span class="line">    p *= p + p;</span><br><span class="line">    return fract(p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">float noise(float p) // 1d perlin noise</span><br><span class="line">&#123;</span><br><span class="line">    float pi = floor(p), pf = fract(p), w = fade(pf);</span><br><span class="line">    </span><br><span class="line">    return mix ( dot ( hash(pi+0.0), pf-0.0 ),</span><br><span class="line">               	 dot ( hash(pi+1.0), pf-1.0 ), w);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2D-Perlin-Noise"><a href="#2D-Perlin-Noise" class="headerlink" title="2D Perlin Noise"></a>2D Perlin Noise</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">vec2 hash(vec2 p)</span><br><span class="line">&#123;</span><br><span class="line">	vec3 p3 = fract(vec3(p.xyx) * vec3(.1031, .1030, .0973));</span><br><span class="line">    p3 += dot(p3, p3.yzx+33.33);</span><br><span class="line">    return fract((p3.xx+p3.yz)*p3.zy);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">float noise(vec2 p) // 2d perlin noise</span><br><span class="line">&#123;</span><br><span class="line">    vec2 pi = floor(p), pf = fract(p), w = fade(pf);</span><br><span class="line"></span><br><span class="line">    return mix( mix( dot( hash(pi+vec2(0.0,0.0)), pf-vec2(0.0,0.0) ), </span><br><span class="line">                     dot( hash(pi+vec2(1.0,0.0)), pf-vec2(1.0,0.0) ), w.x),</span><br><span class="line">                mix( dot( hash(pi+vec2(0.0,1.0)), pf-vec2(0.0,1.0) ), </span><br><span class="line">                     dot( hash(pi+vec2(1.0,1.0)), pf-vec2(1.0,1.0) ), w.x), w.y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3D-Perlin-Noise"><a href="#3D-Perlin-Noise" class="headerlink" title="3D Perlin Noise"></a>3D Perlin Noise</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">vec3 hash(vec3 p3)</span><br><span class="line">&#123;</span><br><span class="line">	p3 = fract(p3 * vec3(.1031, .1030, .0973));</span><br><span class="line">    p3 += dot(p3, p3.yxz+33.33);</span><br><span class="line">    return fract((p3.xxy + p3.yxx)*p3.zyx);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">float noise(vec3 p) // 3d perlin noise</span><br><span class="line">&#123;</span><br><span class="line">    vec3 pi = floor(p), pf = fract(p), w = fade(pf);</span><br><span class="line">    </span><br><span class="line">    return mix( mix( mix( dot( hash(pi+vec3(0.0,0.0,0.0)), pf-vec3(0.0,0.0,0.0) ), </span><br><span class="line">                          dot( hash(pi+vec3(1.0,0.0,0.0)), pf-vec3(1.0,0.0,0.0) ), w.x),</span><br><span class="line">                     mix( dot( hash(pi+vec3(0.0,1.0,0.0)), pf-vec3(0.0,1.0,0.0) ), </span><br><span class="line">                          dot( hash(pi+vec3(1.0,1.0,0.0)), pf-vec3(1.0,1.0,0.0) ), w.x), w.y),</span><br><span class="line">                mix( mix( dot( hash(pi+vec3(0.0,0.0,1.0)), pf-vec3(0.0,0.0,1.0) ), </span><br><span class="line">                          dot( hash(pi+vec3(1.0,0.0,1.0)), pf-vec3(1.0,0.0,1.0) ), w.x),</span><br><span class="line">                     mix( dot( hash(pi+vec3(0.0,1.0,1.0)), pf-vec3(0.0,1.0,1.0) ), </span><br><span class="line">                          dot( hash(pi+vec3(1.0,1.0,1.0)), pf-vec3(1.0,1.0,1.0) ), w.x), w.y), w.z);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4D-Perlin-Noise"><a href="#4D-Perlin-Noise" class="headerlink" title="4D Perlin Noise"></a>4D Perlin Noise</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">vec4 hash(vec4 p4)</span><br><span class="line">&#123;</span><br><span class="line">	p4 = fract(p4  * vec4(.1031, .1030, .0973, .1099));</span><br><span class="line">    p4 += dot(p4, p4.wzxy+33.33);</span><br><span class="line">    return fract((p4.xxyz+p4.yzzw)*p4.zywx);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">float noise (vec4 p) // 4d perlin noise</span><br><span class="line">&#123;</span><br><span class="line">	vec4 pi = floor(p), pf = fract(p), w = fade(pf);</span><br><span class="line">    </span><br><span class="line">    return mix( mix (mix (mix ( dot( hash(pi+vec4(0.0,0.0,0.0,0.0)), pf-vec4(0.0,0.0,0.0,0.0) ),</span><br><span class="line">                                dot( hash(pi+vec4(1.0,0.0,0.0,0.0)), pf-vec4(1.0,0.0,0.0,0.0) ), w.x),</span><br><span class="line">                          mix ( dot( hash(pi+vec4(0.0,1.0,0.0,0.0)), pf-vec4(0.0,1.0,0.0,0.0) ),</span><br><span class="line">                                dot( hash(pi+vec4(1.0,1.0,0.0,0.0)), pf-vec4(1.0,1.0,0.0,0.0) ), w.x), w.y),</span><br><span class="line">                     mix (mix ( dot( hash(pi+vec4(0.0,0.0,1.0,0.0)), pf-vec4(0.0,0.0,1.0,0.0) ),</span><br><span class="line">                                dot( hash(pi+vec4(1.0,0.0,1.0,0.0)), pf-vec4(1.0,0.0,1.0,0.0) ), w.x),</span><br><span class="line">                          mix ( dot( hash(pi+vec4(0.0,1.0,1.0,0.0)), pf-vec4(0.0,1.0,1.0,0.0) ),</span><br><span class="line">                                dot( hash(pi+vec4(1.0,1.0,1.0,0.0)), pf-vec4(1.0,1.0,1.0,0.0) ), w.x), w.y), w.z),</span><br><span class="line">                mix (mix (mix ( dot( hash(pi+vec4(0.0,0.0,0.0,1.0)), pf-vec4(0.0,0.0,0.0,1.0) ),</span><br><span class="line">                                dot( hash(pi+vec4(1.0,0.0,0.0,1.0)), pf-vec4(1.0,0.0,0.0,1.0) ), w.x),</span><br><span class="line">                          mix ( dot( hash(pi+vec4(0.0,1.0,0.0,1.0)), pf-vec4(0.0,1.0,0.0,1.0) ),</span><br><span class="line">                                dot( hash(pi+vec4(1.0,1.0,0.0,1.0)), pf-vec4(1.0,1.0,0.0,1.0) ), w.x), w.y),</span><br><span class="line">                     mix (mix ( dot( hash(pi+vec4(0.0,0.0,1.0,1.0)), pf-vec4(0.0,0.0,1.0,1.0) ),</span><br><span class="line">                                dot( hash(pi+vec4(1.0,0.0,1.0,1.0)), pf-vec4(1.0,0.0,1.0,1.0) ), w.x),</span><br><span class="line">                          mix ( dot( hash(pi+vec4(0.0,1.0,1.0,1.0)), pf-vec4(0.0,1.0,1.0,1.0) ),</span><br><span class="line">                                dot( hash(pi+vec4(1.0,1.0,1.0,1.0)), pf-vec4(1.0,1.0,1.0,1.0) ), w.x), w.y), w.z), w.w);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://songxiaofeng.top/blog/2019/09/07/perlin-noise-implementation/" data-id="ck09ajg5a0003toukh38bu8zv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2019/05/04/我的shadertoy之旅/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">我的shadertoy之旅</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/09/">September 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/09/">September 2018</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2019/09/07/perlin-noise-implementation/">Perlin Noise Implementation</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/05/04/我的shadertoy之旅/">我的shadertoy之旅</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/05/02/在windows控制台上播放视频/">在windows控制台上播放视频</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/12/04/Summary-of-scrum-development/">Summary of Scrum Development</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2018/10/01/live2D/">Live2D</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 <a href="http://songxiaofeng.top/" target="_blank">Song Xiaofeng</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="https://songxiaofeng.top" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
